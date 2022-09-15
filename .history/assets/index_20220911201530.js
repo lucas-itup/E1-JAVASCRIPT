@@ -51,24 +51,11 @@ let pizzas = [pizza1, pizza2, pizza3, pizza4, pizza5, pizza6]
 let listado = document.getElementById('listado-pizzas');
 
 const buscarPizza = () => {
-    let valueid = document.getElementById('value-id').value;
-    var precioPizza = document.getElementById('precio-pizza');
-    var nombrePizza = document.getElementById('nombre-pizza');
-    var inputVacio = document.getElementById('input-vacio')
-    inputVacio.textContent = "";
-    precioPizza.textContent = "";
-    nombrePizza.textContent = "";
-
-    if (valueid == "") return inputVacio.textContent = "Debes ingresar un valor numerico."
+    let valueid = document.getElementById('value-id');
 
     var found = pizzas.find(function(post, index) {
-        inputVacio.textContent = ""
-        if (post.id == valueid) {
-            precioPizza.textContent = post.precio;
-            nombrePizza.textContent = post.nombre;
+        if (post.id == 'DE_LA_CASA')
             return true;
-        }
     });
-
-    if (found == undefined) return inputVacio.textContent = "El codigo ingresado es incorrecto."
+    console.log(valueid)
 }

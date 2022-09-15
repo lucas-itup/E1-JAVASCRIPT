@@ -57,7 +57,6 @@ const buscarPizza = () => {
     var inputVacio = document.getElementById('input-vacio')
     inputVacio.textContent = "";
     precioPizza.textContent = "";
-    nombrePizza.textContent = "";
 
     if (valueid == "") return inputVacio.textContent = "Debes ingresar un valor numerico."
 
@@ -65,9 +64,10 @@ const buscarPizza = () => {
         inputVacio.textContent = ""
         if (post.id == valueid) {
             precioPizza.textContent = post.precio;
-            nombrePizza.textContent = post.nombre;
+            nombrePizza = post.precio;
             return true;
         }
+
     });
 
     if (found == undefined) return inputVacio.textContent = "El codigo ingresado es incorrecto."

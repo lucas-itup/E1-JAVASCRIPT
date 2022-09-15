@@ -53,22 +53,22 @@ let listado = document.getElementById('listado-pizzas');
 const buscarPizza = () => {
     let valueid = document.getElementById('value-id').value;
     var precioPizza = document.getElementById('precio-pizza');
-    var nombrePizza = document.getElementById('nombre-pizza');
     var inputVacio = document.getElementById('input-vacio')
     inputVacio.textContent = "";
-    precioPizza.textContent = "";
-    nombrePizza.textContent = "";
 
-    if (valueid == "") return inputVacio.textContent = "Debes ingresar un valor numerico."
+    validarInputBlanco(valueid, inputVacio)
 
     var found = pizzas.find(function(post, index) {
-        inputVacio.textContent = ""
-        if (post.id == valueid) {
-            precioPizza.textContent = post.precio;
-            nombrePizza.textContent = post.nombre;
-            return true;
-        }
-    });
+        console.log(post.id);
+        console.log(valueid)
+        if (post.id == valueid) return true;
 
-    if (found == undefined) return inputVacio.textContent = "El codigo ingresado es incorrecto."
+
+    });
+    console.log(found)
+    if (found == true) inputVacio.textContent = "El id no existe"
+}
+
+const validarInputBlanco = (valueid, inputVacio, post) => {
+    if (valueid == "") return inputVacio.textContent = "Debes ingresar un valor numerico"
 }

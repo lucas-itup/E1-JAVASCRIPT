@@ -68,6 +68,7 @@ const buscarPizza = () => {
             nombrePizza.textContent = post.nombre;
             return true;
         }
+
     });
 
     if (found == undefined) return inputVacio.textContent = "El codigo ingresado es incorrecto."
