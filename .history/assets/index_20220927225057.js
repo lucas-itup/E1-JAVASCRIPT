@@ -2,20 +2,17 @@ window.onload = (event) => {
     var precioPizza = document.getElementById('precio-pizza');
     var nombrePizza = document.getElementById('nombre-pizza');
     var ingredientesPizza = document.getElementById('ingredientes-pizza');
+    var inputVacio = document.getElementById('input-vacio');
     var imgPizza = document.getElementById("img-pizza");
-    console.log(localStorage.getItem);
 
-    if (localStorage.length > 0) {
-        precioPizza.textContent = localStorage.getItem("precioPizza");
+    precioPizza.textContent = localStorage.getItem("precioPizza");
 
-        nombrePizza.textContent = localStorage.getItem("nombrePizza");
+    nombrePizza.textContent = localStorage.getItem("nombrePizza");
 
-        ingredientesPizza.textContent = localStorage.getItem("ingredientesPizza");
+    ingredientesPizza.textContent = localStorage.getItem("ingredientesPizza");
 
-        imgPizza.setAttribute('src', localStorage.getItem("imagenPizza"));
-    } else {
-        imgPizza.setAttribute('src', '/img/descarga (4).jpg');
-    }
+    imgPizza.setAttribute('src', localStorage.getItem("imagenPizza"));
+
 };
 let pizza1 = {
     id: '1',
@@ -85,7 +82,6 @@ const buscarPizza = () => {
     inputVacio.textContent = "";
     precioPizza.textContent = "";
     nombrePizza.textContent = "";
-    ingredientesPizza.textContent = "";
     imgPizza.setAttribute('src', '/img/descarga (4).jpg');
 
     if (valueid == "") return inputVacio.textContent = "Debes ingresar un valor numerico."

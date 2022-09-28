@@ -85,7 +85,6 @@ const buscarPizza = () => {
     inputVacio.textContent = "";
     precioPizza.textContent = "";
     nombrePizza.textContent = "";
-    ingredientesPizza.textContent = "";
     imgPizza.setAttribute('src', '/img/descarga (4).jpg');
 
     if (valueid == "") return inputVacio.textContent = "Debes ingresar un valor numerico."

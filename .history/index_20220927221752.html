@@ -14,21 +14,20 @@
 <body>
     <div id="listado-pizzas" style="text-align: center;">
         <div>
+            <h3>Elige tu pizza favorita ingresando el codigo.</h3>
             <div class="card">
-                <h3>Elige tu pizza favorita ingresando el codigo.</h3>
-                <img id="img-pizza" src="" alt="Avatar" style="width:30%">
+                <img src="/img/descarga (1).jpg" alt="Avatar" style="width:100%">
                 <div class="container">
-                    <p>Nombre de la pizza: <span class="texts" id="nombre-pizza"> </span></p>
-                    <p>Precio: <span class="texts" id="precio-pizza"></span></p>
-                    <p>Ingredientes: <span class="texts" id="ingredientes-pizza"></span>.</p>
+                    <h2>Nombre de la pizza: <span id="nombre-pizza"> </span></h2>
+                    <h4>Precio: <span id="precio-pizza"></span></h4>
                 </div>
             </div>
         </div>
-        <div id="container-search">
+        <div>
             <input type="number" value="" id="value-id">
-            <button id="buscar-pizza" onclick="buscarPizza()" type="button">Buscar</button>
+            <p id="input-vacio"> </p>
+            <button onclick="buscarPizza()" type="button">Buscar</button>
         </div>
-        <p id="input-vacio"> </p>
     </div>
 
     <script src="/assets/index.js"></script>

@@ -1,22 +1,3 @@
-window.onload = (event) => {
-    var precioPizza = document.getElementById('precio-pizza');
-    var nombrePizza = document.getElementById('nombre-pizza');
-    var ingredientesPizza = document.getElementById('ingredientes-pizza');
-    var imgPizza = document.getElementById("img-pizza");
-    console.log(localStorage.getItem);
-
-    if (localStorage.length > 0) {
-        precioPizza.textContent = localStorage.getItem("precioPizza");
-
-        nombrePizza.textContent = localStorage.getItem("nombrePizza");
-
-        ingredientesPizza.textContent = localStorage.getItem("ingredientesPizza");
-
-        imgPizza.setAttribute('src', localStorage.getItem("imagenPizza"));
-    } else {
-        imgPizza.setAttribute('src', '/img/descarga (4).jpg');
-    }
-};
 let pizza1 = {
     id: '1',
     nombre: 'Muzarella',
@@ -85,7 +66,6 @@ const buscarPizza = () => {
     inputVacio.textContent = "";
     precioPizza.textContent = "";
     nombrePizza.textContent = "";
-    ingredientesPizza.textContent = "";
     imgPizza.setAttribute('src', '/img/descarga (4).jpg');
 
     if (valueid == "") return inputVacio.textContent = "Debes ingresar un valor numerico."
@@ -94,18 +74,16 @@ const buscarPizza = () => {
         inputVacio.textContent = ""
         if (post.id == valueid) {
             precioPizza.textContent = post.precio;
-            localStorage.setItem("precioPizza", post.precio);
             nombrePizza.textContent = post.nombre;
-            localStorage.setItem("nombrePizza", post.nombre);
             ingredientesPizza.textContent = post.ingredientes.join(", ");
-            localStorage.setItem("ingredientesPizza", post.ingredientes.join(", "));
             imgPizza.setAttribute('src', post.imagen);
-            localStorage.setItem("imagenPizza", post.imagen);
             return true;
         }
     });
 
     if (found == undefined) return inputVacio.textContent = "El codigo ingresado es incorrecto."
 
-
+    window.onload = (event) => {
+        console.log('page is fully loaded');
+    };
 }
